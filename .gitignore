@@ -1,3 +1,9 @@
 data
 .ipynb_checkpoints
 Untitled.ipynb
+eda/UserProfiles.csv
+eda/bg_grouped.csv
+eda/bg_values.csv
+eda/group_all_tables.csv
+eda/more_thn_five.csv
+eda/open_by_user.csv
