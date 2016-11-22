@@ -1,0 +1,29 @@
+na 's set them to a negative number, and add a binary column - random forest
+
+knn to predict the nan 's - and do another model
+
+random forest, knn, boosting, svm, logistic regression
+
+
+Things to do this weekend:
+by the end of this week: pipeline done.
+end of the week 
+build the crappiest model
+one week from now, what is your presentation?
+Monday- EDA
+Tuesday - Data engineering
+Wed_Model
+Thrs-Model
+Friday - Analysis
+
+3 minutes presentation
+
+
+
+Questions:
+
+User_profile table:
+usertreatment type: meds/ both?
+Bg_schedule?
+Total Bg reminders?
+carb budget? 
