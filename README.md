@@ -34,7 +34,7 @@ A few metrics will be defined and are used throughout the project.
 
 Exploratory analysis shows how user engagement behaves with passing time. 50% of users only use the app 1-5 times.
 
-![Total User Engagement](https://github.com/salmariazi/Diabetes_Monitor/blob/master/figures/1month_after.png)
+![Total User Engagement](https://github.com/salmariazi/Diabetes_Monitor/blob/master/figures/tot_eng.png)
 
 
 I classified user engagement into 4 classes as seen in the table below:
@@ -54,7 +54,7 @@ After 3 months user engagement decreases to only 15%.
 
 
 Looking at the total number of users who churned and the total blood glucose entries, it seems like after 10 entries, the total churned users decrease from 2000 to 150.
-![User Engagement - 3 months after initial use](https://github.com/salmariazi/Diabetes_Monitor/blob/master/figures/churn_bg_entr.png)
+![User Engagement - Churn and bg entry use](https://github.com/salmariazi/Diabetes_Monitor/blob/master/figures/churn_bg_entr.png)
 
 ### Features used
 
@@ -104,12 +104,10 @@ In order to make meaningful predictions and find the driving factors of user eng
 
         I looked at 30 random users from each category, normalized their blood glucose levels and plotted them with respect to the days they have been using the app to see if app usage helps keep blood glucose levels stable.
 
-        ![User Engagement - 3 months after initial use](https://github.com/salmariazi/Diabetes_Monitor/blob/master/figures/low.png)
+![User Engagement - 3 months after initial use](https://github.com/salmariazi/Diabetes_Monitor/blob/master/figures/low.png)
 
-        ![User Engagement - 3 months after initial use](https://github.com/salmariazi/Diabetes_Monitor/blob/master/figures/med.png)
+![User Engagement - 3 months after initial use](https://github.com/salmariazi/Diabetes_Monitor/blob/master/figures/med.png)
 
-        ![User Engagement - 3 months after initial use](https://github.com/salmariazi/Diabetes_Monitor/blob/master/figures/high.png)
+![User Engagement - 3 months after initial use](https://github.com/salmariazi/Diabetes_Monitor/blob/master/figures/high.png)
 
-        Looking at these plots, it cannot be concluded that the app has an effect. Further investigation is required.
-
-        
+Looking at these plots, it cannot be concluded that the app has an effect. Further investigation is required.
