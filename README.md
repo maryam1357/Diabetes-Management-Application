@@ -16,6 +16,19 @@ Another challenge with the data was that initially, as another side to this proj
 
 Because of data confidentiality, I have slightly replaced actual values for this report.
 
+## Definitions
+
+A few metrics will be defined and are used throughout the project.
+
+    ### Churn:
+
+    Churn was defined to be inactivity for a 10-day period prior to the last day of available data. If a user is actively using a health tracker app, they usually open the app at least every day. Therefore, not being active for 10 days is a safe indicator that they have churned.
+
+    ### Critical and Acute Diabetes:
+
+        Critical -  blood glucose less than 50 ml/dL and more than 350
+
+        Acute -  blood glucose less than 70 ml/dL and more than 250
 
 ## Exploratory Analysis
 
@@ -34,9 +47,6 @@ I calculated user engagement one month after users signed up, for a 1-week perio
 After 3 months user engagement decreases to only 15%.
 ![User Engagement - 3 months after initial use](https://github.com/salmariazi/Diabetes_Monitor/blob/master/figures/3month_after.png)
 
-### Churn Definition
-
-Churn was defined to be inactivity for a 10-day period prior to the last day of available data. If a user is actively using a health tracker app, they usually open the app at least every day. Therefore, not being active for 10 days is a safe indicator that they have churned.
 
 Looking at the total number of users who churned and the total blood glucose entries, it seems like after 10 entries, the total churned users decrease from 2000 to 150.
 ![User Engagement - 3 months after initial use](https://github.com/salmariazi/Diabetes_Monitor/blob/master/figures/churn_bg_entr.png)
@@ -59,4 +69,30 @@ The features used in this project were:
 
 ## Feature Engineering - Defining New Metrics
 
-In order to make meaningful predictions and find the driving factors of user engagement, new metrics had to be defined and calculated:
+In order to make meaningful predictions and find the driving factors of user engagement for Diabetes Management App, new metrics had to be defined and calculated:
+
+    - Session Interval
+
+    - First 2 days user interaction
+
+    - First week user interaction
+
+    - Total interaction per day
+
+    - 1 week period interaction after 1 month being a user
+
+    - 1 week period interaction after 3 months being a user
+
+    - Blood glucose minimum and maximum for each user
+
+    - Blood glucose increase and decrease trends every 2 week period.
+
+    - Number of critical and acute cases for each user
+
+    - Risk levels for users:
+
+        Low Risk: when a user has no acute or critical cases
+
+        Medium Risk: when a user has no critical but at least 1 acute case
+
+        High Risk: when a user has critical cases
