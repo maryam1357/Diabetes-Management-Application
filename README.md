@@ -44,11 +44,19 @@ Looking at the total number of users who churned and the total blood glucose ent
 ### Features used
 
 The features used in this project were:
+
 1. User interaction with the app:
+
     - Opening the app
+
     - Entering a value (blood glucose, weight, meal intake, exercise)
+
 2. User profiles
+
     - Diabetes type
+
     - App setting preferences
 
-## Feature Engineering - Defining New metrics
+## Feature Engineering - Defining New Metrics
+
+In order to make meaningful predictions and find the driving factors of user engagement, new metrics had to be defined and calculated:
