@@ -19,4 +19,4 @@ Another challenge with the data was that initially, as another side to this proj
 
 Exploratory analysis shows how user engagement behaves with passing time.
 
-![Total User Engagement](https://github.com/salmariazi/predicting-seizures/blob/master/figures/interictal.png)
+![Total User Engagement](https://github.com/salmariazi/Diabetes_Monitor/blob/master/figures/1month_after.png)
