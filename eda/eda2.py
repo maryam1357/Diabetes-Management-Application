@@ -136,10 +136,10 @@ def user_interaction_plot():
     plt.show()
 
 if __name__ =='__main__':
-    more_than_five = pd.read_csv('more_thn_five.csv')
-    user_profiles = pd.read_csv('user_profiles.csv')
-    bg_values = pd.read_csv('bg_values.csv')
-    grouped_all = pd.read_csv('group_all_tables.csv')
+    more_than_five = pd.read_csv('../data/more_thn_five.csv')
+    user_profiles = pd.read_csv('../data/user_profiles.csv')
+    bg_values = pd.read_csv('../data/bg_values.csv')
+    grouped_all = pd.read_csv('../data/group_all_tables.csv')
     grouped_all['is_active'] = (grouped_all.loc[:,'Churn']==0).astype(int)
 
     more_than_10 = more_than_five[more_than_five['appopen']>=10]
@@ -149,7 +149,7 @@ if __name__ =='__main__':
     high_sample = sample_high(high_risk_patients)
     med_sample = sample_med(med_risk_patients)
     low_sample = sample_low(low_risk_patients)
-    plot_10_users_ivan(bg_values, low_sample)
+    plot_sample_bgvalues(bg_values, low_sample)
     plt.title("Low Risk Users BG Changes vs Time")
     plt.show()
 
@@ -157,5 +157,7 @@ if __name__ =='__main__':
     plt.title("Med Risk Users BG Changes vs Time")
     plt.show()
 
-    #churn_bg_entry(grouped_all)
-    #user_interaction_plot()
+    churn_bg_entry(grouped_all)
+    plt.show()
+    user_interaction_plot()
+    plt.show()

@@ -14,6 +14,8 @@ The main challenge with user engagement prediction is that only a small percenta
 
 Another challenge with the data was that initially, as another side to this project, I was trying to predict user diabetes risk, and blood glucose fluctuations. Having done some research on diabetes, I realized that there are many features which  need to be tracked in order to come close to predicting risk based on blood glucose level. The important features that I needed but did not have for this purpose were exact time of food intake, the kind of food, insulin injection, physical activity, stress level, and etc.
 
+Because of data confidentiality, I have slightly replaced actual values for this report.
+
 
 ## Exploratory Analysis
 
@@ -30,4 +32,23 @@ I calculated user engagement one month after users signed up, for a 1-week perio
 ![User Engagement - 1 month after initial use](https://github.com/salmariazi/Diabetes_Monitor/blob/master/figures/1month_after.png)
 
 After 3 months user engagement decreases to only 15%.
-![User Engagement - 1 month after initial use](https://github.com/salmariazi/Diabetes_Monitor/blob/master/figures/3month_after.png)
+![User Engagement - 3 months after initial use](https://github.com/salmariazi/Diabetes_Monitor/blob/master/figures/3month_after.png)
+
+### Churn Definition
+
+Churn was defined to be inactivity for a 10-day period prior to the last day of available data. If a user is actively using a health tracker app, they usually open the app at least every day. Therefore, not being active for 10 days is a safe indicator that they have churned.
+
+Looking at the total number of users who churned and the total blood glucose entries, it seems like after 10 entries, the total churned users decrease from 2000 to 150.
+![User Engagement - 3 months after initial use](https://github.com/salmariazi/Diabetes_Monitor/blob/master/figures/churn_bg_entr.png)
+
+### Features used
+
+The features used in this project were:
+1. User interaction with the app:
+    - Opening the app
+    - Entering a value (blood glucose, weight, meal intake, exercise)
+2. User profiles
+    - Diabetes type
+    - App setting preferences
+
+## Feature Engineering - Defining New metrics
