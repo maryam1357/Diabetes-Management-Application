@@ -36,16 +36,21 @@ Exploratory analysis shows how user engagement behaves with passing time. 50% of
 
 ![Total User Engagement](https://github.com/salmariazi/Diabetes_Monitor/blob/master/figures/1month_after.png)
 
+
 I classified user engagement into 4 classes as seen in the table below:
 
 ![User Engagement Classification](https://github.com/salmariazi/Diabetes_Monitor/blob/master/figures/class_table.png)
 
+First week when users get the app, they are very excited, leading to high interactions during that week.
+
+![User Engagement - 1 month after initial use](https://github.com/salmariazi/Diabetes_Monitor/blob/master/figures/first_week.png)
+
 I calculated user engagement one month after users signed up, for a 1-week period. 64% of users opted out after 1 month. Here are the results:
 
-![User Engagement - 1 month after initial use](https://github.com/salmariazi/Diabetes_Monitor/blob/master/figures/1month_after.png)
+![User Engagement - 1 month after initial use](https://github.com/salmariazi/Diabetes_Monitor/blob/master/figures/1month.png)
 
 After 3 months user engagement decreases to only 15%.
-![User Engagement - 3 months after initial use](https://github.com/salmariazi/Diabetes_Monitor/blob/master/figures/3month_after.png)
+![User Engagement - 3 months after initial use](https://github.com/salmariazi/Diabetes_Monitor/blob/master/figures/3months.png)
 
 
 Looking at the total number of users who churned and the total blood glucose entries, it seems like after 10 entries, the total churned users decrease from 2000 to 150.
@@ -96,3 +101,15 @@ In order to make meaningful predictions and find the driving factors of user eng
         Medium Risk: when a user has no critical but at least 1 acute case
 
         High Risk: when a user has critical cases
+
+        I looked at 30 random users from each category, normalized their blood glucose levels and plotted them with respect to the days they have been using the app to see if app usage helps keep blood glucose levels stable.
+
+        ![User Engagement - 3 months after initial use](https://github.com/salmariazi/Diabetes_Monitor/blob/master/figures/low.png)
+
+        ![User Engagement - 3 months after initial use](https://github.com/salmariazi/Diabetes_Monitor/blob/master/figures/med.png)
+
+        ![User Engagement - 3 months after initial use](https://github.com/salmariazi/Diabetes_Monitor/blob/master/figures/high.png)
+
+        Looking at these plots, it cannot be concluded that the app has an effect. Further investigation is required.
+
+        
