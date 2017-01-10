@@ -7,3 +7,8 @@ eda/bg_values.csv
 eda/group_all_tables.csv
 eda/more_thn_five.csv
 eda/open_by_user.csv
+eda/kmeans.py
+churn_predict_graphlab.ipynb
+ignore
+eda_ignore
+README.pages

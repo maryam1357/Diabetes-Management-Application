@@ -1,9 +1,7 @@
 import pandas as pd
 import random
 import matplotlib.pyplot as plt
-import seaborn as sns
 from pandas.tools.plotting import scatter_matrix
-from bokeh.charts import Bar, output_file, show
 import datetime as dt
 import numpy as np
 
@@ -23,15 +21,22 @@ def read_files():
     return open_by_user , bg_values, carb_ent, user_profiles, weights
 
 def to_datetme(df, col):
+    '''change date formats'''
+
     df[col] = pd.to_datetime(df[col])
     return df
 
 def user_id_to_int(df):
+
+    # fill na user_id's with 55555
     df = df.fillna(55555)
     df['user_id']= df['user_id'].astype(int)
     return df
 
 def acute_crit(bg_df):
+
+    # make acute and critical columns
+
     bg_df['critical']=(bg_df['value'] < 50.0) | (bg_df['value'] > 350.0)
     bg_df['acute']=(bg_df['value'] <70) | (bg_df['value'] >250.0)
     (bg_df['critical']==True).sum() # 7071
@@ -40,12 +45,12 @@ def acute_crit(bg_df):
     return bg_df
 
 def bg_outlier(bg_df):
+
+    #delete outliers
     bg_df = bg_df[bg_df['value']<1000]
     bg_df = bg_df[bg_df['value']>20]
     bg_df['bg_appopen'] = 1
     return bg_df
-
-
 
 def min_max_date(open_df):
     '''returns the df with min/max dates per user '''
@@ -57,14 +62,17 @@ def min_max_date(open_df):
     return date_open
 
 def group_date(df, date_open):
+    '''groups main df with the min/max date dataframe'''
     grouped_df = pd.merge(df, date_open , on= 'user_id')
     return grouped_df
 
 def app_user_age(df):
+    '''adds a column (user's last day) - (user's first day)'''
     df['user_app_age']= df['max_date']- df['min_date']
     return df
 
 def set_min_date_zero(df,label):
+    '''sets the first day users interacted with each feature 0'''
     name = 'days_f0{}'.format(label)
     df[name] = df['Date'] - df['min_date']
     df[name] = (df[name] / np.timedelta64(1, 'D')).astype(int)
@@ -75,6 +83,7 @@ def del_min_max_date(df):
     return df
 
 def rename_col(df, col, name):
+    '''renames columns'''
     df.rename(columns = {col:name}, inplace=True)
     return df
 
@@ -83,6 +92,8 @@ def group_by_userid(df):
     return grouped_df
 
 def bin_bg(df):
+    '''bin bg entries to 2 week periods to see change in bg every 2 weeks'''
+
     bins = [ 0,  14,  28,  42,  56,  70,  84,  98, 112]
     df['bins'] = pd.cut(df['days_f0bg'], bins )
     df_avg = bg_values.groupby(['user_id', 'bins'])['bg'].mean()
@@ -98,6 +109,8 @@ def bin_bg(df):
     return bg_diff
 
 def first_week(open_by_user, weights, carb_ent, bg_values):
+
+    '''first week interactions in all dataframes'''
     open_1w = open_by_user[open_by_user['days_f0opn']<=7]
     open_1w = open_1w.groupby('user_id').sum().reset_index()
     open_1w = open_1w.rename(columns={'appopen':'1w_open'})
@@ -133,6 +146,7 @@ def first_week(open_by_user, weights, carb_ent, bg_values):
     return week_1_data
 
 def one_month_from_start(open_by_user, weights, carb_ent, bg_values):
+    '''first month (1 week period) user interactions for all tables'''
 
     open_1m = open_by_user[(open_by_user['days_f0opn']>30) &(open_by_user['days_f0opn']<=37) ]
     open_1m = open_1m.groupby('user_id').sum().reset_index()
@@ -159,6 +173,7 @@ def one_month_from_start(open_by_user, weights, carb_ent, bg_values):
     return month_1_data
 
 def three_month_from_start(open_by_user, weights, carb_ent, bg_values):
+    '''3 months from start (1 week period) user interactions for all tables'''
 
     open_3m = open_by_user[(open_by_user['days_f0opn']>90) &(open_by_user['days_f0opn']<=97) ]
     open_3m = open_3m.groupby('user_id').sum().reset_index()
@@ -185,6 +200,8 @@ def three_month_from_start(open_by_user, weights, carb_ent, bg_values):
     return month_3_data
 
 def first_day(open_by_user, weights, carb_ent, bg_values):
+    '''first 2days (1 week period) user interactions for all tables'''
+
     open_1d = open_by_user[open_by_user['days_f0opn']<=2]
     open_1d = open_1d.groupby('user_id').sum().reset_index()
     open_1d = open_1d.rename(columns={'appopen':'1d_open'})
@@ -224,7 +241,6 @@ def group_open(open_by_user):
 
     return grouped_open
 
-
 def max_per_user_carb_wt(carb_ent, weights) :
     tot_carb_ent = carb_ent.groupby('user_id')['carbent'].sum().reset_index()
     carb_group = carb_ent.groupby('user_id').max().reset_index().drop(['Date', 'max_open/day'],axis = 1)
@@ -241,9 +257,6 @@ def max_per_user_carb_wt(carb_ent, weights) :
     wt_ent_group = wt_ent_group.rename(columns= {'wt_ent':'max_wtent/day'})
 
     return carb_group, wt_ent_group
-
-
-
 
 def merge(df1, df2):
     df_merged = pd.merge(df1,df2 , how='left', left_on='user_id', right_on='user_id')
@@ -356,10 +369,8 @@ if __name__ == '__main__':
     open_by_user = rename_col(open_by_user, 'value', 'appopen')
     churn_day = open_by_user['max_date'].max() - dt.timedelta(days=10)
     open_by_user['churn']= (open_by_user['max_date']< churn_day).astype(int)
-    # open_by_user = open_by_user.drop('churn', axis =1)
-    # one_time_users = open_by_user[open_by_user['appopen']<=1]
-    # open_by_user = open_by_user[open_by_user['appopen']>1]
-    # open_by_user = open_by_user[open_by_user['appopen']<230]
+
+    open_by_user = open_by_user[open_by_user['appopen']<230]
 
     weights = user_id_to_int(weights)
     weights = to_datetme(weights, 'Date')
@@ -435,18 +446,3 @@ if __name__ == '__main__':
     more_thn_five = group_all_tables[group_all_tables['appopen']>=5]
     more_thn_five['1w_engagement']= more_thn_five['1w_open']/7
     more_thn_five = more_thn_five.drop(['>20_y', '<-20_y'], axis=1)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    #low_risk_users_df, low_risk_users_list  = get_low_risk_users(group_all_tables)
