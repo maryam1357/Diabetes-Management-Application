@@ -21,7 +21,7 @@ Exploratory analysis shows how user engagement behaves with passing time. 50% of
 
 ![Total User Engagement](https://github.com/salmariazi/Diabetes_Monitor/blob/master/figures/1month_after.png)
 
-I classified user engagement in to 4 classes as seen in the table below:
+I classified user engagement into 4 classes as seen in the table below:
 
 ![User Engagement Classification](https://github.com/salmariazi/Diabetes_Monitor/blob/master/figures/class_table.png)
 
