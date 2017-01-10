@@ -34,7 +34,7 @@ A few metrics will be defined and are used throughout the project.
 
 Exploratory analysis shows how user engagement behaves with passing time. 50% of users only use the app 1-5 times.
 
-![Total User Engagement](https://github.com/salmariazi/Diabetes_Monitor/blob/master/figures/tot_eng.png)
+![Total User Engagement](https://github.com/salmariazi/Diabetes_Monitor/blob/master/figures/total_eng.png)
 
 
 I classified user engagement into 4 classes as seen in the table below:
@@ -76,33 +76,33 @@ The features used in this project were:
 
 In order to make meaningful predictions and find the driving factors of user engagement for Diabetes Management App, new metrics had to be defined and calculated:
 
-    - Session Interval
+- Session Interval
 
-    - First 2 days user interaction
+- First 2 days user interaction
 
-    - First week user interaction
+- First week user interaction
 
-    - Total interaction per day
+- Total interaction per day
 
-    - 1 week period interaction after 1 month being a user
+- 1 week period interaction after 1 month being a user
 
-    - 1 week period interaction after 3 months being a user
+- 1 week period interaction after 3 months being a user
 
-    - Blood glucose minimum and maximum for each user
+- Blood glucose minimum and maximum for each user
 
-    - Blood glucose increase and decrease trends every 2 week period.
+- Blood glucose increase and decrease trends every 2 week period.
 
-    - Number of critical and acute cases for each user
+- Number of critical and acute cases for each user
 
-    - Risk levels for users:
+- Risk levels for users:
 
-        Low Risk: when a user has no acute or critical cases
+    Low Risk: when a user has no acute or critical cases
 
-        Medium Risk: when a user has no critical but at least 1 acute case
+    Medium Risk: when a user has no critical but at least 1 acute case
 
-        High Risk: when a user has critical cases
+    High Risk: when a user has critical cases
 
-        I looked at 30 random users from each category, normalized their blood glucose levels and plotted them with respect to the days they have been using the app to see if app usage helps keep blood glucose levels stable.
+    I looked at 30 random users from each category, normalized their blood glucose levels and plotted them with respect to the days they have been using the app to see if app usage helps keep blood glucose levels stable.
 
 ![User Engagement - 3 months after initial use](https://github.com/salmariazi/Diabetes_Monitor/blob/master/figures/low.png)
 
