@@ -136,8 +136,8 @@ The classifier models I used were:
 
 Here is the Receiver Operating Characteristic curve for the models used.
 
-![ROC CURVE](https://github.com/salmariazi/Diabetes_Monitor/blob/master/figures/ROC.png)
+![ROC CURVE](https://github.com/salmariazi/Diabetes_Monitor/blob/master/figures/roc.png)
 
 As seen in the ROC curve, Random Forest is the best classifier for this purpose. The confusion matrix also shows how well the model is behaving. For churn prediction, a high recall and a low false negative is desirable. In this case false negative would be if churn is not predicted while user churns.
 
-![Confusion Matrix](https://github.com/salmariazi/Diabetes_Monitor/blob/master/figures/Confusion_matrix.png)
+![Confusion Matrix](https://github.com/salmariazi/Diabetes_Monitor/blob/master/figures/Conf_mat.png)
