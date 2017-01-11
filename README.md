@@ -107,11 +107,11 @@ In order to make meaningful predictions and find the driving factors of user eng
 
     I looked at 30 random users from each category, normalized their blood glucose levels and plotted them with respect to the days they have been using the app to see if app usage helps keep blood glucose levels stable.
 
-![User Engagement - 3 months after initial use](https://github.com/salmariazi/Diabetes_Monitor/blob/master/figures/low.png)
+![Low Risk Users - BG values](https://github.com/salmariazi/Diabetes_Monitor/blob/master/figures/low.png)
 
-![User Engagement - 3 months after initial use](https://github.com/salmariazi/Diabetes_Monitor/blob/master/figures/med.png)
+![Medium Risk Users - BG values](https://github.com/salmariazi/Diabetes_Monitor/blob/master/figures/med.png)
 
-![User Engagement - 3 months after initial use](https://github.com/salmariazi/Diabetes_Monitor/blob/master/figures/high.png)
+![High Risk Users - BG values](https://github.com/salmariazi/Diabetes_Monitor/blob/master/figures/high.png)
 
 Looking at these plots, it cannot be concluded that the app has an effect. Further investigation is required.
 
@@ -136,8 +136,8 @@ The classifier models I used were:
 
 Here is the Receiver Operating Characteristic curve for the models used.
 
-![User Engagement - 3 months after initial use](https://github.com/salmariazi/Diabetes_Monitor/blob/master/figures/roc.png)
+![ROC CURVE](https://github.com/salmariazi/Diabetes_Monitor/blob/master/figures/ROC.png)
 
 As seen in the ROC curve, Random Forest is the best classifier for this purpose. The confusion matrix also shows how well the model is behaving. For churn prediction, a high recall and a low false negative is desirable. In this case false negative would be if churn is not predicted while user churns.
 
-![User Engagement - 3 months after initial use](https://github.com/salmariazi/Diabetes_Monitor/blob/master/figures/Confusion_matrix.png)
+![Confusion Matrix](https://github.com/salmariazi/Diabetes_Monitor/blob/master/figures/Confusion_matrix.png)
