@@ -20,11 +20,11 @@ Because of data confidentiality, I have slightly replaced actual values for this
 
 A few metrics will be defined and are used throughout the project.
 
-    ### Churn:
+    ## Churn:
 
     Churn was defined to be inactivity for a 10-day period prior to the last day of available data. If a user is actively using a health tracker app, they usually open the app at least every day. Therefore, not being active for 10 days is a safe indicator that they have churned.
 
-    ### Critical and Acute Diabetes:
+    ## Critical and Acute Diabetes:
 
         Critical -  blood glucose less than 50 ml/dL and more than 350
 
@@ -45,18 +45,21 @@ First week when users get the app, they are very excited, leading to high intera
 
 ![User Engagement - 1 month after initial use](https://github.com/salmariazi/Diabetes_Monitor/blob/master/figures/first_week.png)
 
+
 I calculated user engagement one month after users signed up, for a 1-week period. 64% of users opted out after 1 month. Here are the results:
 
 ![User Engagement - 1 month after initial use](https://github.com/salmariazi/Diabetes_Monitor/blob/master/figures/1month.png)
+
 
 After 3 months user engagement decreases to only 15%.
 ![User Engagement - 3 months after initial use](https://github.com/salmariazi/Diabetes_Monitor/blob/master/figures/3months.png)
 
 
 Looking at the total number of users who churned and the total blood glucose entries, it seems like after 10 entries, the total churned users decrease from 2000 to 150.
+
 ![User Engagement - Churn and bg entry use](https://github.com/salmariazi/Diabetes_Monitor/blob/master/figures/churn_bg_entr.png)
 
-### Features used
+## Features
 
 The features used in this project were:
 
@@ -72,7 +75,7 @@ The features used in this project were:
 
     - App setting preferences
 
-## Feature Engineering - Defining New Metrics
+### Feature Engineering - Defining New Metrics
 
 In order to make meaningful predictions and find the driving factors of user engagement for Diabetes Management App, new metrics had to be defined and calculated:
 
@@ -111,3 +114,30 @@ In order to make meaningful predictions and find the driving factors of user eng
 ![User Engagement - 3 months after initial use](https://github.com/salmariazi/Diabetes_Monitor/blob/master/figures/high.png)
 
 Looking at these plots, it cannot be concluded that the app has an effect. Further investigation is required.
+
+
+## Churn Prediction
+
+### Method
+
+In order to predict churn, I used the newly defined metrics along with the profile preference features. I used SMOTE method to deal with class imbalance (more than 70% of total users had churned).
+
+k-means clustering was used to cluster similar users in terms of user profiles and user behavior.
+
+The classifier models I used were:
+
+- Logistic Regression
+
+- Random Forest Classifier
+
+- Gradient Boosting Classifier
+
+- Ensemble (Majority vote) Classifier
+
+Here is the Receiver Operating Characteristic curve for the models used.
+
+![User Engagement - 3 months after initial use](https://github.com/salmariazi/Diabetes_Monitor/blob/master/figures/roc.png)
+
+As seen in the ROC curve, Random Forest is the best classifier for this purpose. The confusion matrix also shows how well the model is behaving. For churn prediction, a high recall and a low false negative is desirable. In this case false negative would be if churn is not predicted while user churns.
+
+![User Engagement - 3 months after initial use](https://github.com/salmariazi/Diabetes_Monitor/blob/master/figures/Confusion_matrix.png)
