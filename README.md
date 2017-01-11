@@ -22,13 +22,13 @@ A few metrics will be defined and are used throughout the project.
 
 ### Churn:
 
-    Churn was defined to be inactivity for a 10-day period prior to the last day of available data. If a user is actively using a health tracker app, they usually open the app at least every day. Therefore, not being active for 10 days is a safe indicator that they have churned.
+Churn was defined to be inactivity for a 10-day period prior to the last day of available data. If a user is actively using a health tracker app, they usually open the app at least every day. Therefore, not being active for 10 days is a safe indicator that they have churned.
 
 ### Critical and Acute Diabetes:
 
-        Critical -  blood glucose less than 50 ml/dL and more than 350
+    Critical -  blood glucose less than 50 ml/dL and more than 350
 
-        Acute -  blood glucose less than 70 ml/dL and more than 250
+    Acute -  blood glucose less than 70 ml/dL and more than 250
 
 ## Exploratory Analysis
 
