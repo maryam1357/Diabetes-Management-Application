@@ -26,9 +26,9 @@ Churn was defined to be inactivity for a 10-day period prior to the last day of 
 
 ### Critical and Acute Diabetes:
 
-    Critical -  blood glucose less than 50 ml/dL and more than 350
+Critical -  blood glucose less than 50 ml/dL and more than 350
 
-    Acute -  blood glucose less than 70 ml/dL and more than 250
+Acute -  blood glucose less than 70 ml/dL and more than 250
 
 ## Exploratory Analysis
 
