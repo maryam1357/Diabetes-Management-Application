@@ -181,7 +181,15 @@ This histogram compares first-week interaction of active and churned users.
 
 ## Recommendations
 
-In order to have
+In order to measure success, quantifiable metrics are needed. The recommendation for the company is to set a goal of for example getting 25 app interactions on the first week. To get to the recommended number of app interaction, marketing strategies are needed. Maybe have a reward system that users can collect points every time they enter something in the app.
+
+Another way is to connect similar users to each other in terms of user behavior, age, diabetes type, weight, and have them compete in managing their diabetes.
+
+## Next Steps
+
+The next step is to get more user data (age, weight, health background, etc.) and cluster similar users in order to connect them to each other, or recommend similar-user tips and conduct A/B testing.
+
+
 
 
 ## Conclusion
