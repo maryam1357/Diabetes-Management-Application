@@ -3,7 +3,7 @@
 
 ## Summary
 
-User engagement is a top concern of most mobile-app making companies. It is specifically important for health care mobile apps, and even more important for diabetes-tracking apps, because they are trying to drive behavior change on the users. In this project I analyzed user engagement data, feature engineered new metrics
+User engagement is a top concern for most mobile-app companies. It is specifically important for health care mobile apps, and critical for diabetes-tracking apps, as they are trying to drive behavior change. In this project I analyzed user engagement data, feature engineered new metrics
 and predicted future engagement level. The main focus of this project was to predict churn, predict user engagement level, and analyze the drivers of engagement.
 
 ## Data
@@ -12,7 +12,7 @@ The data was provided by a top health tech company which I cannot name due to ap
 
 The main challenge with user engagement prediction is that only a small percentage of users actually use an app after the first day. This results in data imbalance (not as extreme as in fraud detection).
 
-Another challenge with the data was that initially, as another side to this project, I was trying to predict user diabetes risk, and blood glucose fluctuations. Having done some research on diabetes, I realized that there are many features which  need to be tracked in order to come close to predicting risk based on blood glucose level. The important features that I needed but did not have for this purpose were exact time of food intake, the kind of food, insulin injection, physical activity, stress level, and etc.
+Another challenge with the data was that initially, as another side to this project, I was trying to predict user diabetes risk, and blood glucose fluctuations. Having done some research on diabetes, I realized that there are many features which  need to be tracked in order to come close to predicting risk based on blood glucose level alone. The important features that I was missing were: exact time of food intake, the kind of food, insulin injection, physical activity, stress level, and etc.
 
 Because of data confidentiality, I have slightly replaced actual values for this report.
 
