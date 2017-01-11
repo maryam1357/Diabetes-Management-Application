@@ -141,3 +141,34 @@ Here is the Receiver Operating Characteristic curve for the models used.
 As seen in the ROC curve, Random Forest is the best classifier for this purpose. The confusion matrix also shows how well the model is behaving. For churn prediction, a high recall and a low false negative is desirable. In this case false negative would be if churn is not predicted while user churns.
 
 ![Confusion Matrix](https://github.com/salmariazi/Diabetes_Monitor/blob/master/figures/Conf_mat.png)
+
+## Engagement Class Prediction
+
+As mentioned earlier, I classified users engagement levels into 4 classes. Using the new defined metrics and user profile features, I predicted users engagement level one month after first getting the app.
+
+![User Engagement Classification](https://github.com/salmariazi/Diabetes_Monitor/blob/master/figures/class_table.png)
+
+For this multi-class classifier, I used undersampling for class imbalance, which resulted in better accuracy compared to oversampling.
+
+I used the same models as in previous section, and again Random Forest was the best classifier.
+
+## Important Features - Engagement Drivers
+
+The classifiers ran for this projects agreed on the important features which were:
+
+- First week app open
+
+- Session Interval
+
+- First day app open
+
+- First week blood glucose entries
+
+- First day blood glucose entries
+
+- Maximum number of times user opened the app in a day
+
+
+Following plot compares some of these values for active vs churned users.
+
+![Important Features](https://github.com/salmariazi/Diabetes_Monitor/blob/master/figures/important_feat.png)
